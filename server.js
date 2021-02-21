@@ -4,6 +4,8 @@ let mongodb = require('mongodb')
 let app = express()
 let db
 
+app.use(express.static('public'))
+
 let connectionString = ''
 mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client) {
   db = client.db()
@@ -49,6 +51,9 @@ app.get('/', function(req, res) {
   
   </div>
   
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/browser.js"></script>
+
   </body>
   </html>`)
   })
