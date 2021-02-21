@@ -64,3 +64,8 @@ app.post('/create-item', function (req, res) {
     res.redirect('/')
   })
 })
+
+app.post('/update-item', function(req, res) {
+  console.log(req.body.text)
+  res.send("Success")
+})
